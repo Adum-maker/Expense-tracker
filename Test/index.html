@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loropio Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-and-title">
+            <img src="./img/Startup Lions Logo.png" alt="Budget Tracker Logo" class="logo">
+            <h2>Startup Lions Expense Tracker</h2>
+        </div>
+    </header>
+    <main>
+        <section id="balance-container">
+            <h2>Account Balance: <span id="balance">0</span></h2>
+        </section>
+        <section id="transaction-form">
+            <h2>Add Transaction</h2>
+            <form id="add-transaction-form">
+                <label for="type">Type:</label>
+                <select id="type" required>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <label for="category">Category:</label>
+                <select id="category" required></select>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" required>
+                <label for="description">Description:</label>
+                <input type="text" id="description" required>
+                <button type="submit">Add Transaction</button>
+            </form>
+        </section>
+        <section id="transactions-container">
+            <h2>Transactions</h2>
+            <button id="load-transactions-button">Load Transactions</button>
+            <table id="transactions-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Transactions will be loaded here -->
+                </tbody>
+            </table>
+        </section>
+        <section id="export-container">
+            <button id="export-button">Export to CSV</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Budget Tracker</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

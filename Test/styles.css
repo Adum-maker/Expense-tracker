@@ -1,0 +1,228 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    color: black;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 10px; 
+    padding: 0 20px;
+}
+
+.logo {
+    width: 150px; 
+    height: 150px; 
+}
+
+
+@media screen and (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .header-content img {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .header-content h1 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+}
+
+main {
+    flex: 1;
+    margin: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+#balance-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#balance-container h2 {
+    font-size: 24px;
+}
+
+#transaction-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto 20px;
+}
+
+#transaction-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#transaction-form input, #transaction-form select, #transaction-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#transaction-form button {
+    background-color: #d6753c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#transactions-container {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+#load-transactions-button {
+    background-color: #d6753c; 
+    border: none; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block;
+    font-size: 16px; 
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 8px; 
+}
+
+#transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#transactions-table th, #transactions-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+#transactions-table th {
+    background-color: #f9f9f9;
+}
+
+#transactions-table .income {
+    color: green;
+}
+
+#transactions-table .expense {
+    color: red;
+}
+
+#export-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#export-container button {
+    background-color: #d6753c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+footer {
+    background-color: #d6753c;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    main {
+        margin: 10px;
+    }
+
+    #transaction-form, #transactions-container {
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    #transactions-table th, #transactions-table td {
+        padding: 8px;
+    }
+
+    #transactions-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    #transactions-table thead, #transactions-table tbody, #transactions-table th, #transactions-table td, #transactions-table tr {
+        display: block;
+    }
+
+    #transactions-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    #transactions-table tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+
+    #transactions-table td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #transactions-table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
